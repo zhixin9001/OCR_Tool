@@ -1,0 +1,11 @@
+D:\Personal\Code\OCR_Tool\OCR_Tool\bin\Debug\OCR_Tool.exe.config
+D:\Personal\Code\OCR_Tool\OCR_Tool\bin\Debug\OCR_Tool.exe
+D:\Personal\Code\OCR_Tool\OCR_Tool\bin\Debug\OCR_Tool.pdb
+D:\Personal\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.csprojAssemblyReference.cache
+D:\Personal\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.Properties.Resources.resources
+D:\Personal\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.csproj.GenerateResource.cache
+D:\Personal\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.csproj.CoreCompileInputs.cache
+D:\Personal\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.exe
+D:\Personal\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.pdb
+D:\Personal\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.Capture.resources
+D:\Personal\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.OCR.resources
