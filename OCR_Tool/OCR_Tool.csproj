@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api_Auth.cs" />
     <Compile Include="Capture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +81,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Config\Api_Auth.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -95,7 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Config\" />
     <Folder Include="Logs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

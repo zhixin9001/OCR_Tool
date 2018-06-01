@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OCR_Tool
@@ -143,15 +137,7 @@ namespace OCR_Tool
                 // 画完后CatchedBmp不再是空白图片了，而是具有与截取的图片一样的内容
                 g.DrawImage(originBmp, new Rectangle(0, 0, CatchRectangle.Width, CatchRectangle.Height), CatchRectangle, GraphicsUnit.Pixel);
 
-                // 将图片保存到剪切板中
-                //Clipboard.SetImage(CatchedBmp);
-                this.BackgroundImage = CatchedBmp;
-                this.Width = CatchRectangle.Width;
-                this.Height = CatchRectangle.Height;
-                //g.Dispose();
-
                 CatchFinished = false;
-                //CatchedBmp.Dispose();
                 MemoryStream m = new MemoryStream();
                 CatchedBmp.Save(m, ImageFormat.Jpeg);
                 this.base64Image = m.GetBuffer();
