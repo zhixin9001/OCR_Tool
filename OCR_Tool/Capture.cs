@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +33,8 @@ namespace OCR_Tool
         // 用来保存截图的矩形
         private Rectangle CatchRectangle;
 
+        public event EventHandler captureFinished;
+        public byte[] base64Image;
         #endregion
 
         private void Capture_Load(object sender, EventArgs e)
@@ -140,13 +144,18 @@ namespace OCR_Tool
                 g.DrawImage(originBmp, new Rectangle(0, 0, CatchRectangle.Width, CatchRectangle.Height), CatchRectangle, GraphicsUnit.Pixel);
 
                 // 将图片保存到剪切板中
-                Clipboard.SetImage(CatchedBmp);
+                //Clipboard.SetImage(CatchedBmp);
                 this.BackgroundImage = CatchedBmp;
                 this.Width = CatchRectangle.Width;
                 this.Height = CatchRectangle.Height;
-                g.Dispose();
+                //g.Dispose();
+
                 CatchFinished = false;
-                CatchedBmp.Dispose();
+                //CatchedBmp.Dispose();
+                MemoryStream m = new MemoryStream();
+                CatchedBmp.Save(m, ImageFormat.Jpeg);
+                this.base64Image = m.GetBuffer();
+                captureFinished?.Invoke(this, EventArgs.Empty);
             }
         }
     }
