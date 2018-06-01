@@ -4,3 +4,8 @@
 
 /OCR_Tool/bin/
 /OCR_Tool/obj/
+
+OCR_Tool/bin/Debug/OCR_Tool.pdb
+OCR_Tool/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/.vs
+/OCR_Tool/packages
