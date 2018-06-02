@@ -1,4 +1,5 @@
 ﻿{
-  "API_KEY": "",
-  "SECRET_KEY": ""
+  "_comment": "临时密钥，提供每天500次调用",
+  "API_KEY": "ThTBt3ratDfOvS43z2Ce1MdA",
+  "SECRET_KEY": "cljSiZ1B2C6zxqk8P0edulqVjI9ks0Yo"
 }
