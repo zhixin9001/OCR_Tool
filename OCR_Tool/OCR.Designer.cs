@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OCR));
             this.rtbResult = new System.Windows.Forms.RichTextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
@@ -49,7 +50,7 @@
             // btnClear
             // 
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Location = new System.Drawing.Point(492, 343);
+            this.btnClear.Location = new System.Drawing.Point(492, 348);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 2;
@@ -60,7 +61,7 @@
             // btnCopy
             // 
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopy.Location = new System.Drawing.Point(411, 343);
+            this.btnCopy.Location = new System.Drawing.Point(411, 348);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(75, 23);
             this.btnCopy.TabIndex = 2;
@@ -71,7 +72,7 @@
             // btnCapture
             // 
             this.btnCapture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapture.Location = new System.Drawing.Point(15, 343);
+            this.btnCapture.Location = new System.Drawing.Point(15, 348);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(75, 23);
             this.btnCapture.TabIndex = 3;
@@ -83,12 +84,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 370);
+            this.ClientSize = new System.Drawing.Size(573, 383);
             this.Controls.Add(this.btnCapture);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.rtbResult);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "OCR";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

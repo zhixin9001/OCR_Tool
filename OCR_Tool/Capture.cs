@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace OCR_Tool
 {
+    /*
+     * 代码来源：https://www.cnblogs.com/zhiboday/p/6024427.html
+     */
     public partial class Capture : Form
     {
         public Capture(OCR ocrForm)
@@ -43,7 +46,6 @@ namespace OCR_Tool
         {
             if (e.Button == MouseButtons.Right)
             {
-                this.DialogResult = DialogResult.OK;
                 this.ocrForm.Show();
                 this.Close();
             }
@@ -141,9 +143,9 @@ namespace OCR_Tool
                 MemoryStream m = new MemoryStream();
                 CatchedBmp.Save(m, ImageFormat.Jpeg);
                 this.base64Image = m.GetBuffer();
-                this.pbWaitting.Top = Convert.ToInt32(Screen.AllScreens[0].Bounds.Height * 0.5);
-                this.pbWaitting.Left = Convert.ToInt32(Screen.AllScreens[0].Bounds.Width * 0.5 - this.pbWaitting.Width);
-                this.pbWaitting.Visible = true;
+                this.lbTip.Top = Convert.ToInt32(Screen.AllScreens[0].Bounds.Height * 0.5);
+                this.lbTip.Left = Convert.ToInt32(Screen.AllScreens[0].Bounds.Width * 0.5 - this.lbTip.Width);
+                this.lbTip.Visible = true;
                 captureFinished?.Invoke(this, EventArgs.Empty);
             }
         }

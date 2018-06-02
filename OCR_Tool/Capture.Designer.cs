@@ -28,26 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbWaitting = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWaitting)).BeginInit();
+            this.lbTip = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // pbWaitting
+            // lbTip
             // 
-            this.pbWaitting.Image = global::OCR_Tool.Properties.Resources.waitting;
-            this.pbWaitting.Location = new System.Drawing.Point(245, 184);
-            this.pbWaitting.Name = "pbWaitting";
-            this.pbWaitting.Size = new System.Drawing.Size(217, 18);
-            this.pbWaitting.TabIndex = 0;
-            this.pbWaitting.TabStop = false;
-            this.pbWaitting.Visible = false;
+            this.lbTip.AutoSize = true;
+            this.lbTip.BackColor = System.Drawing.Color.Transparent;
+            this.lbTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbTip.ForeColor = System.Drawing.Color.Red;
+            this.lbTip.Location = new System.Drawing.Point(326, 186);
+            this.lbTip.Name = "lbTip";
+            this.lbTip.Size = new System.Drawing.Size(93, 25);
+            this.lbTip.TabIndex = 0;
+            this.lbTip.Text = "识别中...";
+            this.lbTip.Visible = false;
             // 
             // Capture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pbWaitting);
+            this.Controls.Add(this.lbTip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Capture";
             this.Text = "Capture";
@@ -57,13 +59,13 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Capture_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Capture_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Capture_MouseUp);
-            ((System.ComponentModel.ISupportInitialize)(this.pbWaitting)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbWaitting;
+        private System.Windows.Forms.Label lbTip;
     }
 }

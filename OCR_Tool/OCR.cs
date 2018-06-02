@@ -34,17 +34,27 @@ namespace OCR_Tool
 
         private void Capture_captureFinished(object sender, EventArgs e)
         {
-            this.ocrCaptured(formCapture.base64Image);
+            Thread objThread = new Thread(new ThreadStart(delegate
+            {
+                ThreadMethodTxt(formCapture.base64Image);
+            }));
+            objThread.Start();
         }
 
-        private void ocrCaptured(byte[] base64Img)
+        //创建一个用于操作richtextbox的委托
+        public delegate void ocrDelegete(byte[] base64Img);
+        public void ThreadMethodTxt(byte[] base64Img)
+        {
+            var ocrDelMethod = new ocrDelegete(OcrMethod);
+            this.BeginInvoke(ocrDelMethod, base64Img);
+        }
+
+        private void OcrMethod(byte[] base64Img)
         {
             try
             {
                 var apiAuthConfig = Api_Auth.apiAuthConfig;
-                var API_KEY = apiAuthConfig.API_KEY;
-                var SECRET_KEY = apiAuthConfig.SECRET_KEY;
-                var client = new Baidu.Aip.Ocr.Ocr(API_KEY, SECRET_KEY);
+                var client = new Baidu.Aip.Ocr.Ocr(apiAuthConfig.API_KEY, apiAuthConfig.SECRET_KEY);
                 var result = client.AccurateBasic(base64Img);
                 var last = result.Last.Last();
                 this.rtbResult.ResetText();
@@ -72,7 +82,7 @@ namespace OCR_Tool
             {
                 return;
             }
-            this.rtbResult.SelectionBackColor = Color.Blue;
+            this.rtbResult.Focus();
             this.rtbResult.SelectAll();
             Clipboard.SetText(this.rtbResult.Text);
         }

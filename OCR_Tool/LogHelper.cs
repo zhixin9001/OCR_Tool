@@ -25,8 +25,7 @@ namespace OCR_Tool
             var currentMonthLogFile = currentMonthLogPath + "." + LogHelper.LOG_SUFFIX;
             if (!File.Exists(currentMonthLogPath + "." + LogHelper.LOG_SUFFIX))
             {
-                using (var writer = File.Create(currentMonthLogFile))
-                { }
+                using (var writer = File.Create(currentMonthLogFile)) { }
             }
 
             using (var writer = File.AppendText(currentMonthLogFile))
