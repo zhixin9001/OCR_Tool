@@ -141,6 +141,9 @@ namespace OCR_Tool
                 MemoryStream m = new MemoryStream();
                 CatchedBmp.Save(m, ImageFormat.Jpeg);
                 this.base64Image = m.GetBuffer();
+                this.pbWaitting.Top = Convert.ToInt32(Screen.AllScreens[0].Bounds.Height * 0.5);
+                this.pbWaitting.Left = Convert.ToInt32(Screen.AllScreens[0].Bounds.Width * 0.5 - this.pbWaitting.Width);
+                this.pbWaitting.Visible = true;
                 captureFinished?.Invoke(this, EventArgs.Empty);
             }
         }

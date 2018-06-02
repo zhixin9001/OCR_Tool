@@ -25,3 +25,9 @@ E:\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.csproj.CopyComplete
 E:\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.exe
 E:\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.pdb
 E:\Code\OCR_Tool\OCR_Tool\bin\Debug\Config\Api_Auth.json
+D:\Personal\Code\OCR_Tool\OCR_Tool\bin\Debug\AipSdk.dll
+D:\Personal\Code\OCR_Tool\OCR_Tool\bin\Debug\Newtonsoft.Json.dll
+D:\Personal\Code\OCR_Tool\OCR_Tool\bin\Debug\Newtonsoft.Json.xml
+D:\Personal\Code\OCR_Tool\OCR_Tool\obj\Debug\OCR_Tool.csproj.CopyComplete
+D:\Personal\Code\OCR_Tool\OCR_Tool\bin\Debug\Resources\waitting.gif
+D:\Personal\Code\OCR_Tool\OCR_Tool\bin\Debug\Configs\Api_Auth.json

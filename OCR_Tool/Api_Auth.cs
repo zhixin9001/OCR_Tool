@@ -20,13 +20,13 @@ namespace OCR_Tool
 
         public static Api_Auth_Model GetJsonConfig()
         {
-            string dataDir = AppDomain.CurrentDomain.BaseDirectory;
-            string fullpath = dataDir + "Config//Api_Auth.json";
-            using (var sr = new StreamReader(fullpath))
+            var dataDir = AppDomain.CurrentDomain.BaseDirectory;
+            var fullpath = dataDir + "Configs//Api_Auth.json";
+            using (var reader = new StreamReader(fullpath))
             {
-                var s = sr.ReadToEnd();
-                var b = JsonConvert.DeserializeObject<Api_Auth_Model>(s);
-                return b;
+                var content = reader.ReadToEnd();
+                var obj = JsonConvert.DeserializeObject<Api_Auth_Model>(content);
+                return obj;
             }
         }
 

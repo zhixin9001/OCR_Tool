@@ -57,7 +57,7 @@ namespace OCR_Tool
             }
             catch (Exception e)
             {
-
+                LogHelper.WriteLog(e);
             }
             finally
             {
