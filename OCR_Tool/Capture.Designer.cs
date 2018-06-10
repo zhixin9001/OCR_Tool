@@ -36,12 +36,12 @@
             this.lbTip.AutoSize = true;
             this.lbTip.BackColor = System.Drawing.Color.Transparent;
             this.lbTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbTip.ForeColor = System.Drawing.Color.Red;
+            this.lbTip.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbTip.Location = new System.Drawing.Point(326, 186);
             this.lbTip.Name = "lbTip";
-            this.lbTip.Size = new System.Drawing.Size(93, 25);
+            this.lbTip.Size = new System.Drawing.Size(114, 25);
             this.lbTip.TabIndex = 0;
-            this.lbTip.Text = "识别中...";
+            this.lbTip.Text = "正在识别...";
             this.lbTip.Visible = false;
             // 
             // Capture

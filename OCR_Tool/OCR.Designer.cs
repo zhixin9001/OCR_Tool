@@ -50,9 +50,9 @@
             // btnClear
             // 
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Location = new System.Drawing.Point(492, 348);
+            this.btnClear.Location = new System.Drawing.Point(492, 345);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(75, 32);
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "清空";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -61,9 +61,9 @@
             // btnCopy
             // 
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopy.Location = new System.Drawing.Point(411, 348);
+            this.btnCopy.Location = new System.Drawing.Point(411, 345);
             this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(75, 23);
+            this.btnCopy.Size = new System.Drawing.Size(75, 32);
             this.btnCopy.TabIndex = 2;
             this.btnCopy.Text = "复制";
             this.btnCopy.UseVisualStyleBackColor = true;
@@ -72,11 +72,11 @@
             // btnCapture
             // 
             this.btnCapture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapture.Location = new System.Drawing.Point(15, 348);
+            this.btnCapture.Location = new System.Drawing.Point(330, 345);
             this.btnCapture.Name = "btnCapture";
-            this.btnCapture.Size = new System.Drawing.Size(75, 23);
+            this.btnCapture.Size = new System.Drawing.Size(75, 32);
             this.btnCapture.TabIndex = 3;
-            this.btnCapture.Text = "识别";
+            this.btnCapture.Text = "识别(&C)";
             this.btnCapture.UseVisualStyleBackColor = true;
             this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
             // 
