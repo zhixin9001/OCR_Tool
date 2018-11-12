@@ -33,6 +33,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
             this.btnCapture = new System.Windows.Forms.Button();
+            this.ckbReplaceComma = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // rtbResult
@@ -80,11 +81,23 @@
             this.btnCapture.UseVisualStyleBackColor = true;
             this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
             // 
+            // ckbReplaceComma
+            // 
+            this.ckbReplaceComma.AutoSize = true;
+            this.ckbReplaceComma.Location = new System.Drawing.Point(12, 354);
+            this.ckbReplaceComma.Name = "ckbReplaceComma";
+            this.ckbReplaceComma.Size = new System.Drawing.Size(134, 17);
+            this.ckbReplaceComma.TabIndex = 4;
+            this.ckbReplaceComma.Text = "英文标点替换为中文";
+            this.ckbReplaceComma.UseVisualStyleBackColor = true;
+            this.ckbReplaceComma.CheckedChanged += new System.EventHandler(this.ckbReplaceComma_CheckedChanged);
+            // 
             // OCR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 383);
+            this.Controls.Add(this.ckbReplaceComma);
             this.Controls.Add(this.btnCapture);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnClear);
@@ -96,6 +109,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OCR";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -104,5 +118,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnCapture;
+        private System.Windows.Forms.CheckBox ckbReplaceComma;
     }
 }

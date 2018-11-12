@@ -73,6 +73,8 @@ namespace OCR_Tool
                     CatchStart = false;
                     CatchFinished = true;
                     System.Diagnostics.Debug.WriteLine("Capture_MouseUp");
+
+                    BeginOCR();
                 }
             }
         }
@@ -136,9 +138,43 @@ namespace OCR_Tool
 
         private void Capture_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            //try
+            //{
+            //    if (e.Button == MouseButtons.Left && CatchFinished && (CatchRectangle.Width > 0 && CatchRectangle.Height > 0))
+            //    {
+            //        System.Diagnostics.Debug.WriteLine("Capture_MouseDoubleClick");
+            //        // 新建一个与矩形一样大小的空白图片
+            //        Bitmap CatchedBmp = new Bitmap(CatchRectangle.Width, CatchRectangle.Height);
+
+            //        Graphics g = Graphics.FromImage(CatchedBmp);
+
+            //        // 把originBmp中指定部分按照指定大小画到空白图片上
+            //        // CatchRectangle指定originBmp中指定部分
+            //        // 第二个参数指定绘制到空白图片的位置和大小
+            //        // 画完后CatchedBmp不再是空白图片了，而是具有与截取的图片一样的内容
+            //        g.DrawImage(originBmp, new Rectangle(0, 0, CatchRectangle.Width, CatchRectangle.Height), CatchRectangle, GraphicsUnit.Pixel);
+
+            //        CatchFinished = false;
+            //        MemoryStream m = new MemoryStream();
+            //        CatchedBmp.Save(m, ImageFormat.Jpeg);
+            //        this.base64Image = m.GetBuffer();
+            //        this.lbTip.Top = Convert.ToInt32(Screen.AllScreens[0].Bounds.Height * 0.5);
+            //        this.lbTip.Left = Convert.ToInt32(Screen.AllScreens[0].Bounds.Width * 0.5 - this.lbTip.Width);
+            //        this.lbTip.Visible = true;
+            //        captureFinished?.Invoke(this, EventArgs.Empty);
+            //    }
+            //}
+            //catch (Exception exp)
+            //{
+            //    LogHelper.WriteLog(exp);
+            //}
+        }
+
+        private void BeginOCR()
+        {
             try
             {
-                if (e.Button == MouseButtons.Left && CatchFinished&&(CatchRectangle.Width>0&&CatchRectangle.Height>0))
+                if (CatchRectangle.Width > 0 && CatchRectangle.Height > 0)
                 {
                     System.Diagnostics.Debug.WriteLine("Capture_MouseDoubleClick");
                     // 新建一个与矩形一样大小的空白图片
@@ -160,6 +196,10 @@ namespace OCR_Tool
                     this.lbTip.Left = Convert.ToInt32(Screen.AllScreens[0].Bounds.Width * 0.5 - this.lbTip.Width);
                     this.lbTip.Visible = true;
                     captureFinished?.Invoke(this, EventArgs.Empty);
+                }
+                else
+                {
+                    LogHelper.WriteLog(new Exception(string.Format("Invalid size, width:{0}, height:{1}", CatchRectangle.Width, CatchRectangle.Height)));
                 }
             }
             catch (Exception exp)

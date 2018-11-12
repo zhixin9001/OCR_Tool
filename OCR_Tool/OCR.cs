@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Threading;
@@ -13,6 +14,7 @@ namespace OCR_Tool
         {
             InitializeComponent();
             this.btnCapture.Focus();
+            this.ckbReplaceComma.Checked = this.IsReplaceComma();
         }
 
         private Capture formCapture;
@@ -58,10 +60,12 @@ namespace OCR_Tool
                 var result = client.AccurateBasic(base64Img);
                 var last = result.Last.Last();
                 this.rtbResult.ResetText();
+
                 for (var i = 0; i < last.Count(); i++)
                 {
                     var str = JsonConvert.DeserializeObject<Result>(last[i].ToString());
-                    this.rtbResult.AppendText(str.words);
+                    var outputStr = this.ckbReplaceComma.Checked ? ReplaceComma(str.words) : str.words;
+                    this.rtbResult.AppendText(outputStr);
                     this.rtbResult.AppendText("\r\n");
                 }
             }
@@ -90,6 +94,42 @@ namespace OCR_Tool
         private void btnClear_Click(object sender, EventArgs e)
         {
             this.rtbResult.ResetText();
+        }
+
+        private bool IsReplaceComma()
+        {
+            //string path = System.Windows.Forms.Application.ExecutablePath;
+            //var config = ConfigurationManager.OpenExeConfiguration(path);
+            var replaceCommaConfig = ConfigurationManager.AppSettings["replaceComma"];
+            if (replaceCommaConfig != null)
+            {
+                return Boolean.Parse(replaceCommaConfig);
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        private string ReplaceComma(string str)
+        {
+            return str.Replace(",", "，")
+                            .Replace(".", "。")
+                            .Replace(":", "：")
+                            .Replace(";", "；");
+        }
+
+        private void ckbReplaceComma_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.ckbReplaceComma.Checked)
+            {
+                ConfigurationManager.AppSettings.Set("replaceComma", "true");
+            }
+            else
+            {
+                ConfigurationManager.AppSettings.Set("replaceComma", "false");
+            }
         }
     }
 
