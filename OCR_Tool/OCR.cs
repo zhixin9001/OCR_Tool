@@ -60,11 +60,12 @@ namespace OCR_Tool
                 var result = client.AccurateBasic(base64Img);
                 var last = result.Last.Last();
                 this.rtbResult.ResetText();
-
-                for (var i = 0; i < last.Count(); i++)
+                var items = result.First.First;
+                foreach(var item in items)
                 {
-                    var str = JsonConvert.DeserializeObject<Result>(last[i].ToString());
-                    var outputStr = this.ckbReplaceComma.Checked ? ReplaceComma(str.words) : str.words;
+                    var words = item["words"];
+                    var str = words.ToString();
+                    var outputStr = this.ckbReplaceComma.Checked ? ReplaceComma(str) : str;
                     this.rtbResult.AppendText(outputStr);
                     this.rtbResult.AppendText("\r\n");
                 }
